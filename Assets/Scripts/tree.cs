@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class tree : MonoBehaviour
@@ -20,12 +21,19 @@ public class tree : MonoBehaviour
         rd.material.color = Color.red;
         Player player = collision.gameObject.GetComponent<Player>();
 
-        Debug.Log;
+        player.HP -= 15;
+
+        UiManager.instance.ShownotiText($"Hurt -15\nHP: {player.HP}");
+
+        if(player.HP <= 0 )
+        {
+            player.HP = 0;
+        }
 
 
     }
 
-    private void OnCollsionExit(Collider collider)
+    private void OnCollsionExit(Collision collision)
     {
         rd.material.color = new Color32(210, 105, 30 , 255);
     }
