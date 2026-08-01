@@ -24,7 +24,7 @@ public class UiManager : MonoBehaviour
         
     }
 
-    public void ShownotiText(string s)
+    public void ShowNotiText(string s)
     {
         notiText = s;
     }
