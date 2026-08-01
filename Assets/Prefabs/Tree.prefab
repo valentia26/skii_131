@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6350955736813423655}
   - component: {fileID: 1357286118626370928}
   - component: {fileID: 6822374962037526887}
+  - component: {fileID: -4551345053024320388}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -114,3 +115,15 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &-4551345053024320388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784915305273171661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fad4f2b941de14abdcb671f1595ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::tree
