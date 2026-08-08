@@ -23,11 +23,14 @@ public class tree : MonoBehaviour
 
         player.HP -= 15;
 
-        UiManager.instance.ShownotiText($"Hurt -15\nHP: {player.HP}");
+       
 
         if(player.HP <= 0 )
         {
             player.HP = 0;
+            UiManager.instance.ShowNotiText($"Hurt -15\nHP: {player.HP}");
+            Time.timeScale = 0f;
+            UiManager.instance.ShowHideRestartButton(true);
         }
 
 
