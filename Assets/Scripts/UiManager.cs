@@ -32,7 +32,7 @@ public class UiManager : MonoBehaviour
 
     public void ShowNotiText(string s)
     {
-        notiText = s;
+        notiText.text = s;
     }
 
     public void ResartGame()
