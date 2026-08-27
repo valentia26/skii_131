@@ -20,7 +20,7 @@ public class Finish : MonoBehaviour
 
         if (p == null)
             return;
-
+        else
         UiManager.instance.ShowNotiText($"You Win!!\nPoint:{p.Point}");
     }
 }

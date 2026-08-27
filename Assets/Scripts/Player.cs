@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,29 +14,65 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private int point;
-
-    public int Point { get { return point; } set { point = value;  }  }
+    public int Point { get { return point; } set { point = value; } }
 
     [SerializeField]
-    private int hp;
- 
-    public int HP { get { return hp; } set { hp = value; }  }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private int hp ;
+    public int HP { get { return hp; } set { hp = value; } }
+
+    [SerializeField]
+    private float invincibleDuration = 0.5f; 
+    private bool isInvincible = false;
+
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Move");
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        MoveLeftOrRight();
     }
 
     private void MoveLeftOrRight()
     {
         moveValue = moveAction.ReadValue<Vector2>();
-        rb.AddForce(moveValue.x* Vector3.right * forcePower);
+        rb.AddForce(Vector3.right * moveValue.x * forcePower);
     }
+
+    public bool CanTakeDamage()
+    {
+        return !isInvincible;
+    }
+
+    public void TakeDamageCooldown()
+    {
+        StartCoroutine(InvincibleCoroutine());
+    }
+
+    private System.Collections.IEnumerator InvincibleCoroutine()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(invincibleDuration);
+        isInvincible = false;
+    }
+
+
+    //public bool CanTakeDamage()
+    //{
+    //    return !isInvincible;
+    //}
+
+    //public void TakeDamageCooldown()
+    //{
+    //    StartCoroutine(InvincibleCoroutine());
+    //}
+
+    //private System.Collections.IEnumerator InvincibleCoroutine()
+    //{
+    //    isInvincible = true;
+    //    yield return new WaitForSeconds(invincibleDuration);
+    //    isInvincible = false;
+    //}
 }
