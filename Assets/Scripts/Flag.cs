@@ -1,51 +1,18 @@
+using System;
 using UnityEngine;
-using TMPro;
 
-public class UiManager : MonoBehaviour
+public class Flag : MonoBehaviour
 {
-    [SerializeField]
-    private TMP_Text notiText;
-
-    [SerializeField]
-    private GameObject restartButton;
-
-    [SerializeField]
-    private Player player;
-
-    public static UiManager instance;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    private void Awake()
+    private void OnTriggerEnter(Collider other)
     {
-        instance = this;
-    }
-    void Start()
-    {
+        Player player = other.gameObject.GetComponent<Player>();
 
-    }
+        if (player == null)
+            return;
 
-    // Update is called once per frame
-    void Update()
-    {
+        player.Point += 10;
 
-    }
-
-    public void ShowNotiText(string s)
-    {
-        notiText.text = s;
-    }
-
-    public void ResartGame()
-    {
-        player.transform.position = new Vector3(0.1f, 64.5f, -62.5f);
-        player.HP = 100;
-        ShowNotiText("Restart");
-        Time.timeScale = 1f;
-        instance.ShowHideRestartButton(false);
-    }
-
-    public void ShowHideRestartButton(bool flag)
-    {
-        restartButton.SetActive(flag);
+        Uimanager.instance.ShowNotiText($"+10/point\nPoints: {player.Point}");
+        Destroy(gameObject);
     }
 }

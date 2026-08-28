@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2999333295395534665}
   - component: {fileID: 718500109654324797}
   - component: {fileID: -9004539364581357270}
-  - component: {fileID: -2755607246700044313}
+  - component: {fileID: -694359914593222820}
   m_Layer: 0
   m_Name: Tree_13_Smooth
   m_TagString: Untagged
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05fad4f2b941de14abdcb671f1595ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::tree
---- !u!136 &-2755607246700044313
+--- !u!136 &-694359914593222820
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,6 +126,6 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.1632968
-  m_Height: 2
+  m_Height: 4.245684
   m_Direction: 1
   m_Center: {x: -0.011787534, y: 1.9986402, z: 0.011858761}

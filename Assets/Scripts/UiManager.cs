@@ -1,9 +1,10 @@
 using UnityEngine;
 using TMPro;
 
-public class UiManager : MonoBehaviour
+public class Uimanager : MonoBehaviour
 {
-    public static UiManager instance;
+
+    public static Uimanager instance;
 
     [SerializeField]
     private TMP_Text notiText;
@@ -14,19 +15,14 @@ public class UiManager : MonoBehaviour
     [SerializeField]
     private Player player;
 
-    private void Awake()
+    public void Awake()
     {
         instance = this;
     }
 
-    void Start()
+    public void Start()
     {
-
-    }
-
-    void Update()
-    {
-
+        ShowHideRestartButton(false);
     }
 
     public void ShowNotiText(string s)
@@ -34,7 +30,7 @@ public class UiManager : MonoBehaviour
         notiText.text = s;
     }
 
-    public void ResartGame()
+    public void RestartGame()
     {
         player.transform.position = new Vector3(0.1f, 64.5f, -62.5f);
         player.HP = 100;

@@ -20,7 +20,19 @@ public class Finish : MonoBehaviour
 
         if (p == null)
             return;
+
+        Time.timeScale = 0f;
+
+        Rigidbody rb = other.attachedRigidbody;
+        if(rb != null)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
         else
-        UiManager.instance.ShowNotiText($"You Win!!\nPoint:{p.Point}");
+        Uimanager.instance.ShowNotiText($"You Win!!\nPoint:{p.Point}");
+        Uimanager.instance.ShowHideRestartButton(true);
     }
 }
+
