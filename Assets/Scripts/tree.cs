@@ -37,7 +37,7 @@ public class tree : MonoBehaviour
             player.HP = 0;
             Time.timeScale = 0f;
             Uimanager.instance.ShowNotiText($" You are dead!!!\nPoints:{player.Point}");
-            Uimanager.instance.ShowHideRestartButton(true);
+            Uimanager.instance.ShowHideRestartAndExit(true);
         }
     }
 

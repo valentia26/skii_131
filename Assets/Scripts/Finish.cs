@@ -32,7 +32,7 @@ public class Finish : MonoBehaviour
 
         else
         Uimanager.instance.ShowNotiText($"You Win!!\nPoint:{p.Point}");
-        Uimanager.instance.ShowHideRestartButton(true);
+        Uimanager.instance.ShowHideRestartAndExit(true);
     }
 }
 

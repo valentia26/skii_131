@@ -15,6 +15,9 @@ public class Uimanager : MonoBehaviour
     [SerializeField]
     private Player player;
 
+    [SerializeField]
+    private GameObject exitButton;
+
     public void Awake()
     {
         instance = this;
@@ -22,7 +25,7 @@ public class Uimanager : MonoBehaviour
 
     public void Start()
     {
-        ShowHideRestartButton(false);
+        ShowHideRestartAndExit(false);
     }
 
     public void ShowNotiText(string s)
@@ -36,11 +39,18 @@ public class Uimanager : MonoBehaviour
         player.HP = 100;
         ShowNotiText("Restart");
         Time.timeScale = 1f;
-        instance.ShowHideRestartButton(false);
+        instance.ShowHideRestartAndExit(false);
     }
 
-    public void ShowHideRestartButton(bool flag)
+    public void ShowHideRestartAndExit(bool flag)
     {
         restartButton.SetActive(flag);
+        exitButton.SetActive(flag);
+    }
+
+    public void Exit()
+    {
+        Time.timeScale = 1f;
+        Application.Quit();
     }
 }
